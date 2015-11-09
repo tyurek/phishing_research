@@ -1,3 +1,4 @@
+#import random
 import subprocess
 def med_effort_pass_gen(randfrac):
     dist = "data/rockyou_dist.csv"
@@ -7,9 +8,13 @@ def med_effort_pass_gen(randfrac):
     f = open(dist)
     #Pick the password corresponding to random number
     for line in f.readlines():
-        cumu_num = int(line.split(",")[1])
+        #Like splitting on comma, but accounts for passwords containing one or more commas
+        part = line.rpartition(",")
+        cumu_num = int(part[2])
         if randnum <= cumu_num:
-            password = line.split(",")[0]
+            password = part[0]
             break
     f.close()
     return password
+#random.seed()
+#print(med_effort_pass_gen(random.random()))
