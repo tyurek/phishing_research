@@ -6,11 +6,11 @@ import subprocess
 #proportions do not need to add up to a certain number, the program handles that
 #TODO: Make more ethnicity distributions
 def gen_last_name(randfrac, prop_white=0, prop_api=0, prop_hisp=0, prop_black=0, prop_chin=0):
-    dist_white="data/surname_dist_white.csv"
-    dist_api="data/surname_dist_api.csv"
-    dist_hisp="data/surname_dist_hisp.csv"
-    dist_black="data/surname_dist_black.csv"
-    dist_chin="data/surname_dist_chin.csv"
+    dist_white="../input/surname_dist_white.csv"
+    dist_api="../input/surname_dist_api.csv"
+    dist_hisp="../input/surname_dist_hisp.csv"
+    dist_black="../input/surname_dist_black.csv"
+    dist_chin="../input/surname_dist_chin.csv"
     eth_props = [prop_white, prop_api, prop_hisp, prop_black, prop_chin]
     sur_dists = [dist_white, dist_api, dist_hisp, dist_black, dist_chin]
     prop_sum = 0
@@ -39,7 +39,7 @@ def gen_last_name(randfrac, prop_white=0, prop_api=0, prop_hisp=0, prop_black=0,
     return surname
 
 def gen_first_initial(randfrac):
-    dist = "data/first_initial_dist_all.csv"
+    dist = "../input/first_initial_dist_all.csv"
     #Read distribution file for appropriate random number range
     lastnum = int(subprocess.check_output(["tail", "-1", dist]).decode("utf-8").split(",")[1])
     randnum = round(randfrac * lastnum)

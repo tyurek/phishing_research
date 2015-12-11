@@ -45,4 +45,4 @@ def gen_next_id(first_initial, last_name, current_id=""):
         last_name = last_name[0:(8 - len(number))]
     return (last_name + number)
     
-#gen_id_list("data/uid_list.txt", 10000)
+#gen_id_list("../output/uid_list.txt", 10000)

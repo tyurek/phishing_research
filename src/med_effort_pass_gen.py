@@ -1,7 +1,6 @@
-#import random
 import subprocess
 def med_effort_pass_gen(randfrac):
-    dist = "data/rockyou_dist.csv"
+    dist = "../input/rockyou_dist.csv"
     #Read distribution file for appropriate random number range
     lastnum = int(subprocess.check_output(["tail", "-1", dist]).decode("utf-8").split(",")[1])
     randnum = round(randfrac * lastnum)
@@ -16,5 +15,3 @@ def med_effort_pass_gen(randfrac):
             break
     f.close()
     return password
-#random.seed()
-#print(med_effort_pass_gen(random.random()))

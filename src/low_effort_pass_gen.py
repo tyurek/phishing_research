@@ -1,9 +1,9 @@
-#import random
+import random
 import subprocess
 def low_effort_pass_gen(randfrac):
     #The password file used here is every 250th line of the regular rockyou password file
     #It would have been over 100 MB otherwise
-    passfile = "data/rockyou_reduced_unweighted.txt"
+    passfile = "../input/rockyou_reduced_unweighted.txt"
     #The number of lines is appended at the end of the file for speed reasons
     lastnum = int(subprocess.check_output(["tail", "-1", passfile]).decode("utf-8"))
     rand = round(randfrac * lastnum)
@@ -13,5 +13,4 @@ def low_effort_pass_gen(randfrac):
     heads.wait()
     output = output[:len(output) -1]
     return(output)
-#random.seed()
-#print(low_effort_pass_gen(random.random()))
+
