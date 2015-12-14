@@ -3,6 +3,8 @@ version of python tested: 3.4
 
 additional library installations needed: none
 
+the input folder contains last names, first names, passwords, etc. Whenever a program needs to access some precalculated distribution, it looks here. The files with a .csv extension have different weightings for each item.
+
 ##external function descriptions
 
 ###low_effort_pass_gen(randfrac):
