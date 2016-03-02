@@ -7,23 +7,22 @@ the input folder contains last names, first names, passwords, etc. Whenever a pr
 
 ##external function descriptions
 
-###low_effort_pass_gen(randfrac):
+###low_effort_pass_gen(randfrac=None):
 Contained in src/low_effort_pass_gen.py
 
-Selects a random password from a large internal password list.
+Generates a random password from 5 to 16 characters, consisting of letters and numbers.
 
-randfrac: is a random fraction between 0 and 1
+randfrac: Optional, a random fraction between 0 and 1
 
 The following code uses the function as intended:
 ```
-random.seed()
-print(low_effort_pass_gen(random.random()))
+print(low_effort_pass_gen())
 ```
 
 ###low_effort_username_gen(randfrac):
 Contained in src/low_effort_username_gen.py
 
-Selects a random username from an internal name list.
+Selects a random username from an internal baby name list.
 
 randfrac: is a random fraction between 0 and 1
 
@@ -36,7 +35,7 @@ print(low_effort_username_gen(random.random()))
 ###med_effort_pass_gen(randfrac):
 Contained in src/med_effort_pass_gen.py
 
-Selects a random password from a large internal weighted password list.
+Selects a random password from a large internal unweighted password list.
 
 randfrac: is a random fraction between 0 and 1
 
@@ -44,6 +43,32 @@ The following code uses the function as intended:
 ```
 random.seed()
 print(med_effort_pass_gen(random.random()))
+```
+
+###med_effort_username_gen(randfrac):
+Contained in src/med_effort_username_gen.py
+
+Selects a random username from an internal name list of leaked usernames
+
+randfrac: is a random fraction between 0 and 1
+
+The following code uses the function as intended:
+```
+random.seed()
+print(med_effort_username_gen(random.random()))
+```
+
+###high_effort_pass_gen(randfrac):
+Contained in src/med_effort_pass_gen.py
+
+Selects a random password from a large internal weighted password list.
+
+randfrac: is a random fraction between 0 and 1
+
+The following code uses the function as intended:
+```
+random.seed()
+print(high_effort_pass_gen(random.random()))
 ```
 
 ###gen_purdue_id_list(id_list_filename, new_entry_count, prop_white=0, prop_api=0, prop_hisp=0, prop_black=0, prop_china=0, prop_colomb=0, prop_india=0, prop_indo=0, prop_iran=0, prop_malay=0, prop_skorea=0, prop_taiwan=0):
